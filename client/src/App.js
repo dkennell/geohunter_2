@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import Main from './Main'
+import User from './User'
 
 class App extends Component {
   render() {
@@ -7,9 +9,9 @@ class App extends Component {
       <div>
         <p>
           ALCATRAZ IS INDIAN LAND
-          by:
         </p>
-        {this.props.user.name}
+        <User user={this.props.user}/>
+        <Main changeUsername={() => this.props.setName("Anna")}/>
       </div>
     );
   }
@@ -29,6 +31,7 @@ const mapDispatchToProps = (dispatch) => {
              payload: name
             })
           }
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
