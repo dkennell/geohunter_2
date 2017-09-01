@@ -16,7 +16,6 @@ export const setAge = (age) => {
   }
 }
 
-
 ///////////// MY NEW SHIT /////////////////////
 
 export const setUsers = () => {

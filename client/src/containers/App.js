@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Main from '../components/Main'
-import User from '../components/User'
+import UserList from '../components/UserList'
 import { setName } from '../actions/userActions'
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
         <p>
           ALCATRAZ IS INDIAN LAND
         </p>
-        <User user={this.props.user}/>
+        <UserList users={this.props.users}/>
         <Main changeUsername={() => this.props.setName("Anna")}/>
       </div>
     );
@@ -21,7 +21,8 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     user: state.user,
-    math: state.math
+    math: state.math,
+    users: state.users
   }
 }
 
