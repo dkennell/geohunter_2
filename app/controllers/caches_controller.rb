@@ -7,5 +7,6 @@ class CachesController < ApplicationController
 
 	def show
 		@cache = Cache.find(params[:id])
-		render @cache.to_json
+		render json: @cache.to_json
+	end
 end

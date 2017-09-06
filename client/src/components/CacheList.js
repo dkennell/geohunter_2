@@ -1,9 +1,21 @@
 import React from 'react'
+import Cache from './Cache'
 
-const CacheList = () => {
+const CacheList = (props) => {
 	return(
-		<p>CacheList:</p>
+		<div>
+		  <p>CacheList:</p><br/>
+		  {renderCaches(props.caches)}
+		</div>
 		)
+}
+
+const renderCaches = (caches) => {
+	return caches.map((cache, index) => {
+		return(
+			<Cache key={index} info={cache}/>
+			)
+	})
 }
 
 export default CacheList
