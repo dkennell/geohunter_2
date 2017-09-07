@@ -5,6 +5,7 @@ import UserDetail from '../components/UserDetail'
 import CacheDetail from '../components/CacheDetail'
 import CacheList from '../components/CacheList'
 import Home from '../components/Home'
+import Login from '../components/Login'
 import { NavLink, Switch, Route } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
 
@@ -19,7 +20,7 @@ class App extends Component {
           </nav>
           <div>
             <Switch>
-              <Route exact path="/" component={Home}/>
+              <Route exact path="/" component={Login}/>
               <Route exact path="/users" render={() => <UserList users={this.props.users}/>}/>
               <Route path="/users/:id" component={UserDetail} />
               <Route exact path="/caches" render={() => <CacheList caches={this.props.caches}/>}/>
