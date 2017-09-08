@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901152949) do
+ActiveRecord::Schema.define(version: 20170907163205) do
 
   create_table "caches", force: :cascade do |t|
     t.integer "latitude"
@@ -25,6 +25,10 @@ ActiveRecord::Schema.define(version: 20170901152949) do
     t.string  "name"
     t.string  "description"
     t.integer "cache_id"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.integer "user_id"
   end
 
   create_table "usercaches", force: :cascade do |t|

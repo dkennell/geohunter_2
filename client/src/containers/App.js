@@ -4,8 +4,8 @@ import UserList from '../components/UserList'
 import UserDetail from '../components/UserDetail'
 import CacheDetail from '../components/CacheDetail'
 import CacheList from '../components/CacheList'
-import Home from '../components/Home'
 import Login from '../components/Login'
+import LoggedIn from '../components/LoggedIn'
 import { NavLink, Switch, Route } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
 
@@ -14,7 +14,9 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
+          <LoggedIn/>
           <nav>
+            <NavLink to="/">Home</NavLink>
             <NavLink to="/caches">Caches</NavLink>
             <NavLink to="/users">Users</NavLink>
           </nav>
