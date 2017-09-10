@@ -13,8 +13,9 @@
 ActiveRecord::Schema.define(version: 20170907163205) do
 
   create_table "caches", force: :cascade do |t|
-    t.integer "latitude"
-    t.integer "longitude"
+    t.string  "name"
+    t.float   "latitude"
+    t.float   "longitude"
     t.string  "difficulty"
     t.string  "description"
     t.integer "number_of_visits"
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170907163205) do
     t.string "hometown"
     t.string "occupation"
     t.string "description"
+    t.string "image_path"
   end
 
 end

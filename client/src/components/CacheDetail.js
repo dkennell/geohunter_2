@@ -21,7 +21,7 @@ class CacheDetail extends Component {
     return (
       <div>
         <Panel>
-        <h1>Cache #{this.state.cache.id}</h1>
+        <h1>{this.state.cache.name}</h1>
         <p>Latitude: {this.state.cache.latitude}</p>
         <p>Longitude: {this.state.cache.longitude}</p>
         <p>Difficulty: {this.state.cache.difficulty}</p>

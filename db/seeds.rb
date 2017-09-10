@@ -63,8 +63,8 @@ User.create(
 	image_path: "user6"
 	)
 User.create(
-	username: "makeamericagreat123",
-	password: "trumplife5",
+	username: "hoohoorobin",
+	password: "opiesucks666",
 	gender: "male",
 	hometown: "Knoxville",
 	occupation: "nurse",
@@ -84,68 +84,76 @@ User.create(
 # Caches ----------------------------------------------
 
 Cache.create(
-	latitude: Faker::Address.latitude,
-	longitude: Faker::Address.longitude,
+	name: "A Walk in the Woods",
+	latitude: rand(-90.000000000...90.000000000),
+	longitude: rand(-180.000000000...180.000000000),
 	difficulty: "Moderate",
 	number_of_visits: 3,
 	creator_id: 4,
 	description: "Be sure to wear galoshes for this one! The cache is in an old green army ammo container. Good luck!"
 )
 Cache.create(
-	latitude: Faker::Address.latitude,
-	longitude: Faker::Address.longitude,
+	name: "Jimmy's Bluff",
+	latitude: rand(-90.000000000...90.000000000),
+	longitude: rand(-180.000000000...180.000000000),
 	difficulty: "Challenging",
 	number_of_visits: 1,
 	creator_id: 4,
 	description: "You will need to work through some tough terrain on this one. Be sure to stop once in a while to enjoy the view. Start early!"
 )
 Cache.create(
-	latitude: Faker::Address.latitude,
-	longitude: Faker::Address.longitude,
+	name: "Bluntstown Juaunt",
+	latitude: rand(-90.000000000...90.000000000),
+	longitude: rand(-180.000000000...180.000000000),
 	difficulty: "Easy",
 	number_of_visits: 4,
 	creator_id: 8,
 	description: "A nice little adventure in the city. Treat yourself to some gyro afterwards, you'll see the spot. ;)"
 )
 Cache.create(
-	latitude: Faker::Address.latitude,
-	longitude: Faker::Address.longitude,
+	name: "Dewdrop Valley",
+	latitude: rand(-90.000000000...90.000000000),
+	longitude: rand(-180.000000000...180.000000000),
 	difficulty: "Easy",
 	number_of_visits: 2,
 	creator_id: 1,
 	description: "The locals are super nice, they'll point you in the right direction if you get stumped. Bring bug spray!"
 )
 Cache.create(
-	latitude: Faker::Address.latitude,
-	longitude: Faker::Address.longitude,
+	name: "Carver's Peak",
+	latitude: rand(-90.000000000...90.000000000),
+	longitude: rand(-180.000000000...180.000000000),
 	difficulty: "Difficult",
 	number_of_visits: 7,
 	creator_id: 8,
 	description: "Hint: water"
 )
 Cache.create(
-	latitude: Faker::Address.latitude,
-	longitude: Faker::Address.longitude,
+	name: "The Timucua Challenge",
+	latitude: rand(-90.000000000...90.000000000),
+	longitude: rand(-180.000000000...180.000000000),
 	difficulty: "Challenging",
 	number_of_visits: 2,
 	creator_id: 2,
 	description: "You'll need some kind of boat. You might try the kayak rental place on the edge of lake. The cache will not be touching the ground."
 )
 Cache.create(
-	latitude: Faker::Address.latitude,
-	longitude: Faker::Address.longitude,
+	name: "None Shall Pass",
+	latitude: rand(-90.000000000...90.000000000),
+	longitude: rand(-180.000000000...180.000000000),
 	difficulty: "Difficult",
 	number_of_visits: 3,
 	creator_id: 7,
 	description: "This is a tough one, best done over the course of two days. Bring camping equipment and food. It's not terribly difficult to find though, just stick with the trail. Bring bear mace,"
 )
 Cache.create(
-	latitude: Faker::Address.latitude,
-	longitude: Faker::Address.longitude,
+	name: "my place come chill",
+	latitude: rand(-90.000000000...90.000000000),
+	longitude: rand(-180.000000000...180.000000000),
 	difficulty: "Very Easy",
 	number_of_visits: 0,
 	creator_id: 9,
-	description: "hey i live here not teknically a cash, we can hang out and stuff i have videogames u can call me if u need directions"
+	description: "hey i live here. i guess its not teknically a cash, we can hang out and stuff i have videogames u can call me if u need directions"
 )
 
 #Items -------------------------------------------------------

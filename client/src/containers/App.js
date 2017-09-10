@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import UserList from '../components/UserList'
+import UserList from './UserList'
 import UserDetail from '../components/UserDetail'
 import CacheDetail from '../components/CacheDetail'
 import CacheList from '../components/CacheList'

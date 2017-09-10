@@ -5,7 +5,7 @@ const Cache = (props) => {
   return(
   	<div>
     <Panel>
-        <a href={"/caches/" + props.info.id}><p>Cache id: {props.info.id}</p></a>
+        <a href={"/caches/" + props.info.id}><p>{props.info.name}</p></a>
         <p>Latitutde: {props.info.latitude}</p>
         <p>Longitude: {props.info.longitude}</p>
         <br/>
