@@ -1,15 +1,15 @@
 import React from "react"
+import { Panel } from 'react-bootstrap'
 
 const Cache = (props) => {
   return(
   	<div>
-        <p>Cache id: {props.info.id}</p>
+    <Panel>
+        <a href={"/caches/" + props.info.id}><p>Cache id: {props.info.id}</p></a>
         <p>Latitutde: {props.info.latitude}</p>
         <p>Longitude: {props.info.longitude}</p>
-        <p>Difficulty: {props.info.difficulty}</p>
-        <p>Description: {props.info.description}</p>
-        <p>Number of Visits: {props.info.number_of_visits}</p>
         <br/>
+        </Panel>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Panel } from 'react-bootstrap'
 
 class CacheDetail extends Component {
   constructor(props){
@@ -19,11 +20,14 @@ class CacheDetail extends Component {
   render(){
     return (
       <div>
+        <Panel>
         <h1>Cache #{this.state.cache.id}</h1>
         <p>Latitude: {this.state.cache.latitude}</p>
         <p>Longitude: {this.state.cache.longitude}</p>
         <p>Difficulty: {this.state.cache.difficulty}</p>
         <p>Number of visits: {this.state.cache.number_of_visits}</p>
+        <p>Description: {this.state.cache.description}</p>
+      </Panel>
       </div>
     );
 

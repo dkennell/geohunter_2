@@ -1,21 +1,39 @@
 import React from 'react'
 import User from './User'
+import { connect } from 'react-redux'
 
-const UserList = (props) => {
-  return(
-  	<div>
-  	  <p>Userlist:</p>
-  	  {renderUsers(props.users)}
-  	</div>
+class UserList extends React.Component{
+  render(){
+
+    const renderUsers = (users) => {
+      return users.map((user, index) => {
+        return(
+          <User key={index} info={user}/>
+        )
+      })
+    }
+
+    return(
+  	  <div>
+  	    <h1>Userlist:</h1>
+  	    {renderUsers(this.props.users)}
+  	  </div>
   	)
+  }
+
 }
 
-const renderUsers = (users) => {
-	return users.map((user, index) => {
-		return(
-			<User key={index} info={user}/>
-			)
-	})
+const mapStateToProps = (state) => {
+  return {
+    users: state.users,
+  }
 }
 
-export default UserList
+const mapDispatchToProps = (dispatch) => {
+  return {setName: (name) => {
+           console.log("in apps dispatch")
+          }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserList)
