@@ -5,55 +5,8 @@ User.create(
 	gender: "female",
 	hometown: "Denver",
 	occupation: "welder",
-	description: "My goal is to find a cache in every US State. Cache life!"
-	)
-User.create(
-	username: "makeamericagreat123",
-	password: "trumplife5",
-	gender: "male",
-	hometown: "Knoxville",
-	occupation: "nurse",
-	description: "Love caching, especially in the mountains!!!"
-	)
-User.create(
-	username: "starcraftislife",
-	password: "zergrush666",
-	gender: "male",
-	hometown: "Tuscaloosa",
-	occupation: "cashier",
-	description: "I organize Alabama caching trips on the first Saturday of ever month. Hit me up if you want to join!"
-	)
-User.create(
-	username: "realcoreydoctorow",
-	password: "5239480758740568586783456834760496834704865708634056983460958758754830674358473056983745609348843649999568734673444586097",
-	gender: "male",
-	hometown: "Toronto",
-	occupation: "blogger",
-	description: "Using GPS on cache trips helps me remember that the government is always watching me! :D "
-	)
-User.create(
-	username: "crosschokeaustin",
-	password: "ricksonisgod",
-	gender: "female",
-	hometown: "Austin",
-	occupation: "accountant",
-	description: "Brazilian jiu-jitsu is my life!!! Every new town I travel too, I try to train at the local bjj gym and find (or create) a cache!"
-	)
-User.create(
-	username: "anthony756",
-	password: "password",
-	gender: "male",
-	hometown: "Portland",
-	occupation: "customer service",
-	description: "just looking around"
-	)
-User.create(
-	username: "samantha87",
-	password: "greedoshotfirst",
-	gender: "other",
-	hometown: "Coalwood",
-	occupation: "miner",
-	description: "cache life woot"
+	description: "My goal is to find a cache in every US State. Cache life!",
+	image_path: "user1"
 	)
 User.create(
 	username: "tonyrobbinsisgod",
@@ -61,7 +14,62 @@ User.create(
 	gender: "male",
 	hometown: "San Francisco",
 	occupation: "teacher",
-	description: "Life is an adventure, let's live it!"
+	description: "Life is an adventure, let's live it!",
+	image_path: "user2"
+	)
+User.create(
+	username: "starcraftislife",
+	password: "zergrush666",
+	gender: "male",
+	hometown: "Tuscaloosa",
+	occupation: "cashier",
+	description: "I organize Alabama caching trips on the first Saturday of ever month. Hit me up if you want to join!",
+	image_path: "user3"
+	)
+User.create(
+	username: "realcoreydoctorow",
+	password: "5239480758740568586783456834760496834704865708634056983460958758754830674358473056983745609348843649999568734673444586097",
+	gender: "male",
+	hometown: "Toronto",
+	occupation: "blogger",
+	description: "Using GPS on cache trips helps me remember that the government is always watching me! :D ",
+	image_path: "user4"
+	)
+User.create(
+	username: "crosschokeaustin",
+	password: "ricksonisgod",
+	gender: "female",
+	hometown: "Austin",
+	occupation: "accountant",
+	description: "Brazilian jiu-jitsu is my life!!! Every new town I travel too, I try to train at the local bjj gym and find (or create) a cache!",
+	image_path: "user5"
+	)
+User.create(
+	username: "anthony756",
+	password: "password",
+	gender: "male",
+	hometown: "Portland",
+	occupation: "customer service",
+	description: "just looking around",
+	image_path: "user6"
+	)
+User.create(
+	username: "samantha87",
+	password: "greedoshotfirst",
+	gender: "other",
+	hometown: "Coalwood",
+	occupation: "miner",
+	description: "cache life woot",
+	image_path: "user6"
+	)
+User.create(
+	username: "makeamericagreat123",
+	password: "trumplife5",
+	gender: "male",
+	hometown: "Knoxville",
+	occupation: "nurse",
+	description: "Love caching, especially in the mountains!!!",
+	image_path: "user7"
 	)
 User.create(
 	username: "leet_haxor_4_real",
@@ -69,7 +77,8 @@ User.create(
 	gender: "other",
 	hometown: "New York",
 	occupation: "studemt",
-	description: "i will sql inject ur maneframe also i like geocashing"
+	description: "i will sql inject ur maneframe also i like geocashing",
+	image_path: "user8"
 	)
 
 # Caches ----------------------------------------------

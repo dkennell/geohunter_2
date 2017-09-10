@@ -1,13 +1,13 @@
 import React from "react"
+import { Panel } from 'react-bootstrap'
 
 const User = (props) => {
   return(
   	<div>
-        <p>{props.info.username}</p>
-        <p>{props.info.gender}</p>
+      <Panel>
+        <a href={"/users/" + props.info.id}><p>{props.info.username}</p></a>
         <p>{props.info.hometown}</p>
-        <p>{props.info.occupation}</p>
-        <p>{props.info.description}</p>
+      </Panel>
         <br/>
     </div>
   )

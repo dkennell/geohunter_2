@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Panel } from 'react-bootstrap'
 
 class UserDetail extends Component {
   constructor(props){
@@ -19,11 +20,13 @@ class UserDetail extends Component {
   render(){
     return (
       <div>
+      <Panel>
         <h1>{this.state.user.username}</h1>
         <p>Gender: {this.state.user.gender}</p>
         <p>Hometown: {this.state.user.hometown}</p>
         <p>Occupation: {this.state.user.occupation}</p>
         <p>Description: {this.state.user.description}</p>
+      </Panel>
       </div>
     );
 

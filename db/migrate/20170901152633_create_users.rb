@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :hometown
       t.string :occupation
       t.string :description
+      t.string :image_path
     end
   end
 end

@@ -1,0 +1,11 @@
+.short-image {
+  max-height:300px;
+}
+
+h1 { color: green; }
+
+.Carousel.Item img {
+  width: auto;
+  height: 225px;
+  max-height: 225px;
+}
