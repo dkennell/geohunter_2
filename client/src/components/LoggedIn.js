@@ -1,47 +1,33 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { destroySession } from '../actions/sessionActions'
 
 class LoggedIn extends React.Component {
-  constructor(props){
-  	super(props)
-  	this.state = {
-  		username: " (Not Logged In) "
-  	}
-  }
-  render(){
-  
-  const checkSession = () => {
-    fetch('http://localhost:3001/sessions')
-	  .then((response) => response.json())
-	  .then((info) => {
-	   let username = ""
-	   if (info !== undefined) {username = info.username}
-	   setUsername(username)
-	   })
-	}
-
-	const setUsername = (username) => {
-		this.setState({
-			username: username
-		})
-	}
+  render(){  
 
 	const destroySession = () => {
-		fetch('http://localhost:3001/sessions/1')
-		.then((reponse) => window.location.reload())
+		// Dispatch an action that destroys the session
 	}
-
-
-	checkSession()
 
 	  return(
 		<div>
-		  <span>Logged In User: {this.state.username}  </span>
-		  <button onClick={destroySession}>Log Out</button>
+		  <span>Logged In User: {this.props.username}  </span>
+		  <button onClick={this.props.destroySession}>Log Out</button>
 		</div>
 	  )
 	}
 }
 
+  const mapStateToProps = (state) => {
+    return { 
+      currentUser: state.currentUser
+    }
+  }
 
+  const mapDispatchToProps = () => {
+    return { 
+      destroySession
+    }	
+  }
 
-export default LoggedIn
+export default connect(mapStateToProps, mapDispatchToProps)(LoggedIn)

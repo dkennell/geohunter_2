@@ -1,36 +1,33 @@
 import React, { Component } from 'react';
 import { Panel } from 'react-bootstrap'
+import { connect } from 'react-redux'
 
 class UserDetail extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      user: {}
-    }
-  }
-
-  componentDidMount(){
-  const id = this.props.match.params.id
-    fetch('http://localhost:3001/users/' + id)
-      .then((result) => result.json())
-      .then((user) => this.setState({user}))
-      .catch((error) => console.log("Error in the fetch: ", error))
-  }
 
   render(){
+    console.log("Props! ", this.props)
+    if (this.props.user){
     return (
       <div>
       <Panel>
-        <h1>{this.state.user.username}</h1>
-        <p>Gender: {this.state.user.gender}</p>
-        <p>Hometown: {this.state.user.hometown}</p>
-        <p>Occupation: {this.state.user.occupation}</p>
-        <p>Description: {this.state.user.description}</p>
+        <h1>{this.props.user.username}</h1>
+        <p>Gender: {this.props.user.gender}</p>
+        <p>Hometown: {this.props.user.hometown}</p>
+        <p>Occupation: {this.props.user.occupation}</p>
+        <p>Description: {this.props.user.description}</p>
       </Panel>
       </div>
-    );
-
+    ); 
+ } else { return null }
   }
 }
 
-export default UserDetail
+const mapStateToProps = (state, ownProps) => {
+  let id = ownProps.match.params.id
+  let user = state.users.find((user) => {return user.id === id})
+  return {
+    user: user
+  }
+}
+
+export default connect(mapStateToProps)(UserDetail)

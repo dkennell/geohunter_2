@@ -1,6 +1,4 @@
 import React from 'react'
-import { Form } from 'react-bootstrap'
-
 
 class Login extends React.Component{
 	constructor(props){
@@ -39,6 +37,7 @@ class Login extends React.Component{
 	    <input type="password" id="password" name="password"/><br/>
 	    <input type="submit" value="Login"/>
 	  </form>
+    <a href="/signup">Sign Up</a>
 	</div>
 	)
 }
