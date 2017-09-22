@@ -3,31 +3,37 @@ import { connect } from 'react-redux'
 import { destroySession } from '../actions/sessionActions'
 
 class LoggedIn extends React.Component {
-  render(){  
 
-	const destroySession = () => {
-		// Dispatch an action that destroys the session
-	}
+  destroySession = () => {
+    this.props.destroySession()
+  }
 
-	  return(
-		<div>
-		  <span>Logged In User: {this.props.username}  </span>
-		  <button onClick={this.props.destroySession}>Log Out</button>
-		</div>
-	  )
+    render(){  
+    if (this.props.currentUser.id){
+	    return(
+		  <div>
+		    <span>Logged In User: <strong>{this.props.currentUser.username}</strong> </span>
+		    <button onClick={this.props.destroySession}>Log Out</button>
+		  </div>
+	    ) 
+    } else {
+      return(
+        <p></p>
+        )
+    }
 	}
 }
 
   const mapStateToProps = (state) => {
     return { 
-      currentUser: state.currentUser
+      currentUser: state.users.currentUser
     }
   }
 
-  const mapDispatchToProps = () => {
-    return { 
-      destroySession
-    }	
-  }
+  const mapDispatchToProps = (dispatch) => ({ 
+      destroySession: () => {
+        dispatch({type: "LOGOUT_USER"})
+      }
+  })
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoggedIn)

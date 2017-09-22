@@ -9,3 +9,12 @@ export const setUsers = () => {
   	        )
    }
 }
+
+export const loginUser = (userId) => {
+  (dispatch) => {
+  	dispatch({
+  		type: "SET_CURRENT_USER",
+  		payload: userId
+  	})
+  }
+}

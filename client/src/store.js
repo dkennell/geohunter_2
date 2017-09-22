@@ -1,22 +1,19 @@
-import { createStore } from 'redux'
-import { applyMiddleware } from 'redux'
-import { combineReducers } from 'redux'
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import thunk from 'redux-thunk'
+import {persistStore, autoRehydrate} from 'redux-persist'
 import usersReducer from './reducers/usersReducers'
 import cachesReducer from './reducers/cachesReducers'
-import currentUserReducer from './reducers/currentUserReducers'
 import { setUsers } from './actions/userActions'
 import { setCaches } from './actions/cacheActions'
 import { checkSession } from './actions/sessionActions'
 
-let reducer = combineReducers({users: usersReducer, caches: cachesReducer, currentUser: currentUserReducer})
+let reducer = combineReducers({users: usersReducer, caches: cachesReducer})
 
-const store = createStore(reducer, {}, applyMiddleware(thunk))
-
-store.subscribe(() => console.log("Store subscription - Current State: ", store.getState()))
+const store = createStore(reducer, {}, compose(applyMiddleware(thunk), autoRehydrate()))
 
 store.dispatch(setUsers())
 store.dispatch(setCaches())
-store.dispatch(checkSession())
+persistStore(store)
+
 
 export default store

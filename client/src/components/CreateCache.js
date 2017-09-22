@@ -1,14 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 
 class CreateCache extends React.Component{
   	constructor(props){
 		super(props)
-		this.state = {
-			redirect: false,
-			cacheId: 0
-		}
 	}
 
  createCache = (event) => {
@@ -19,7 +14,7 @@ class CreateCache extends React.Component{
   	    body: new FormData(document.getElementById("newCacheForm"))  	  
   	  })
       .then((response) => response.json())
-      .then((cacheInfo) => this.handleNewCache(cacheInfo)) 
+      .then((cacheInfo) => {this.handleNewCache(cacheInfo)}) 
       .catch((error) => {console.log("Error in the Post User fetch: ", error)})	
     }
 
@@ -56,8 +51,8 @@ class CreateCache extends React.Component{
 
 
 const mapStateToProps = (state) => {
-  return { userId: state.currentUser.id
-}
+  return { userId: state.users.currentUser.id
+  }
 }
 
 const mapDispatchToProps = () => {

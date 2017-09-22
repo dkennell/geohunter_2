@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { Panel } from 'react-bootstrap'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 class UserDetail extends Component {
 
+  cacheList = () => {
+    return this.props.caches.map((cache, index) => {
+      return (
+        <li key={index}><Link to={'/caches/' + cache.id}>{cache.name}</Link></li>
+      )
+    })
+  }
+
   render(){
-    console.log("Props! ", this.props)
     if (this.props.user){
     return (
       <div>
@@ -15,6 +23,11 @@ class UserDetail extends Component {
         <p>Hometown: {this.props.user.hometown}</p>
         <p>Occupation: {this.props.user.occupation}</p>
         <p>Description: {this.props.user.description}</p>
+        <h3>Caches Created: </h3>
+        <Link to="/caches/new">(Create New)</Link><br/><br/>
+        <ul>
+          {this.cacheList()}
+        </ul>
       </Panel>
       </div>
     ); 
@@ -24,9 +37,10 @@ class UserDetail extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   let id = ownProps.match.params.id
-  let user = state.users.find((user) => {return user.id === id})
+  let user = state.users.allUsers.find((user) => {return user.id == id})
   return {
-    user: user
+    user: user,
+    caches: state.caches.filter((cache) => {return cache.creator_id == user.id})
   }
 }
 

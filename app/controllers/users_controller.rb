@@ -1,15 +1,7 @@
 class UsersController < ApplicationController
 
 	def create
-	    @user = User.create(username: params[:username],
-	    					password: params[:password],
-	    					gender: params[:gender],
-	    					hometown: params[:hometown],
-	    					occupation: params[:occupation],
-	    					description: params[:description],
-	    					image_path: params[:image_path]
-	    			)
-	    binding.pry
+	    @user = User.create(user_params)
   	    render json: @user.to_json()
 	end
 
@@ -23,4 +15,7 @@ class UsersController < ApplicationController
 		render json: @user.to_json()
 	end
 
+	def user_params
+		params.require(:user).permit(:username, :password, :gender, :hometown, :occupation, :description)
+	end
 end

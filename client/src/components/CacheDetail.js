@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Panel } from 'react-bootstrap'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 class CacheDetail extends Component {
   constructor(props){
@@ -20,7 +21,6 @@ class CacheDetail extends Component {
   }
 
   handleFetch = (cache) => {
-    debugger;
     this.setState({
       cache: cache,
       user: this.props.users.filter((user) => {return user.id === cache.creator_id})[0]
@@ -37,7 +37,7 @@ class CacheDetail extends Component {
         <p>Difficulty: {this.state.cache.difficulty}</p>
         <p>Number of visits: {this.state.cache.number_of_visits}</p>
         <p>Description: {this.state.cache.description}</p>
-        <p>Created By: {this.state.user.username}</p>
+        <span>Created By: </span><Link to={'/users/' + this.state.user.id}>{this.state.user.username}</Link>
       </Panel>
       </div>
     );
@@ -46,7 +46,7 @@ class CacheDetail extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {users: state.users}
+  return {users: state.users.allUsers}
 }
 
 export default connect(mapStateToProps)(CacheDetail)
