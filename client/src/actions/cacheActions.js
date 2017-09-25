@@ -9,3 +9,9 @@ export const setCaches = () => {
   	        )
    }
 }
+
+export const addCache = (userInfo) => {
+  	return {type: "ADD_CACHE",
+  	        payload: userInfo
+  	       }
+  }

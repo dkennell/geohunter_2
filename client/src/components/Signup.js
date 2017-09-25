@@ -8,7 +8,6 @@ class Signup extends React.Component{
 
   createUser = (event) => {
     event.preventDefault()
-    debugger;
     let formDetails = {user: {username: document.getElementById("username").value,
 								password: document.getElementById("password").value,
 								gender: document.getElementById("gender").value,
@@ -16,7 +15,6 @@ class Signup extends React.Component{
 								occupation: document.getElementById("occupation").value,
 								description: document.getElementById("description").value}
 						}
-								debugger;
     this.props.dispatchSignup(formDetails)
   }
 
@@ -51,7 +49,6 @@ const mapStateToProps = () => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
   	dispatchSignup: function(formData){
-  	  debugger;
   	  var myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
       fetch('http://localhost:3001/users',

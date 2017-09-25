@@ -4,15 +4,14 @@ import UserList from './UserList'
 import UserDetail from '../components/UserDetail'
 import CacheDetail from '../components/CacheDetail'
 import CacheList from '../components/CacheList'
-import Login from '../components/Login'
+import Home from '../components/Home'
 import LoggedIn from '../components/LoggedIn'
 import Signup from '../components/Signup'
-import MyCarousel from '../components/MyCarousel'
 import CreateCache from '../components/CreateCache'
 import { Switch, Route } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { Navbar, Nav, NavItem } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
+import { IndexLinkContainer } from 'react-router-bootstrap'
 
 
 class App extends Component {
@@ -28,15 +27,14 @@ class App extends Component {
               </Navbar.Brand>
             </Navbar.Header>
             <Nav>
-              <LinkContainer to="/"><NavItem>Home</NavItem></LinkContainer>
-              <LinkContainer to="/users"><NavItem>Users</NavItem></LinkContainer>
-              <LinkContainer to="/caches"><NavItem>Caches</NavItem></LinkContainer>
+              <IndexLinkContainer to="/"><NavItem>Home</NavItem></IndexLinkContainer>
+              <IndexLinkContainer to="/users"><NavItem>Users</NavItem></IndexLinkContainer>
+              <IndexLinkContainer to="/caches"><NavItem>Caches</NavItem></IndexLinkContainer>
             </Nav>
           </Navbar>
-          <MyCarousel/>
           <div>
             <Switch>
-              <Route exact path="/" component={Login}/>
+              <Route exact path="/" component={Home}/>
               <Route exact path="/users" render={() => <UserList/>}/>
               <Route path="/users/:id" component={UserDetail}/>
               <Route exact path="/caches" render={() => <CacheList caches={this.props.caches}/>}/>

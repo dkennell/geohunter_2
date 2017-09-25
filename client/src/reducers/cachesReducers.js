@@ -3,6 +3,8 @@ const cachesReducer = (state = [], action) => {
 		case "SET_CACHES":
 		  let newState = action.payload
 		  return newState
+		case "ADD CACHE":
+		  return [...state.concat(action.payload)]
 		default:
 		  return state
 	}

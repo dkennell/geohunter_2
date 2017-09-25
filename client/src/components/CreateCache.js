@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { addCache } from '../actions/cacheActions'
 
 class CreateCache extends React.Component{
   	constructor(props){
@@ -19,6 +20,7 @@ class CreateCache extends React.Component{
     }
 
  handleNewCache = (cacheInfo) => {
+ 	  this.props.dispatchCache(cacheInfo)
       this.props.history.push('/caches/' + cacheInfo.id)
       }
 
@@ -55,8 +57,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = () => {
-  return { sayHello: () => console.log("hey")}
+const mapDispatchToProps = (dispatch) => {
+  return { sayHello: () => console.log("hey"),
+		   dispatchCache: (cacheInfo) => {dispatch(addCache)}
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateCache)
