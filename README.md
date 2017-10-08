@@ -2,7 +2,7 @@
 ## Description
 
 This app lets Geocachers share a record of the caches they've left in
-the physical world so that others can have have fun finding them! Yay!
+the physical world so that others can have have fun finding them! Woohoo!
 
 ## Installation 
 
