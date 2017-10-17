@@ -2,6 +2,10 @@ import React from 'react'
 import Login from './Login'
 import { connect } from 'react-redux'
 import MyCarousel from '../components/MyCarousel'
+import { Col } from 'react-bootstrap'
+
+
+
 
 class Home extends React.Component {
   
@@ -10,10 +14,12 @@ class Home extends React.Component {
         JSON.stringify(this.props.currentUser) !== JSON.stringify({})){
 		this.props.history.push('/users/' + this.props.currentUser.id)
 	} else {
-		return(
+			return(
 			<div>
 			  <MyCarousel/>
-			  <Login/>
+			  <Col sm={6} md={4}>
+			    <Login/>
+			  </Col>
 			</div>
 			)
 	}

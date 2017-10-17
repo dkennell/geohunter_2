@@ -28,7 +28,7 @@ class Login extends React.Component{
   render(){
 
   return(
-    <div>
+    <div className="login">
 	  <h1>Login</h1>
 	  <form id="login-form" onSubmit={(event) => {event.preventDefault(); this.checkUser()}}>
 	    <label htmlFor="username">Username </label><br/>
