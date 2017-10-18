@@ -18,3 +18,14 @@ h1 { color: green; }
 	padding-left: 10px;
 	padding-bottom: 5px;
 }
+
+.users_tile {
+	border-style: solid;
+	border-radius: 10px;
+	border-width: 2px;
+	margin-top: 20px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	height: 237px;
+	background-image: url("./../src/images/people_outside1.jpg");
+}
