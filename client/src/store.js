@@ -16,7 +16,11 @@ store.dispatch(setUsers())
 store.dispatch(setCaches())
 
 // Keeps users from getting randomly logged out
-persistStore(store)
+var firstLoad
+if (firstLoad == false){
+  persistStore(store)
+}
+firstLoad = false
 
 
 export default store
