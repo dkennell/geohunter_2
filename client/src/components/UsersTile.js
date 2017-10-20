@@ -8,7 +8,8 @@ class UsersTile extends React.Component{
 
   return(
     <div className="users_tile">
-	    <h1>Users</h1>
+      <br/>
+      <h1 id="tile_text1">Users</h1>
 	  </div>
 	)
   }

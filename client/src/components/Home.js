@@ -1,6 +1,7 @@
 import React from 'react'
 import Login from './Login'
 import UsersTile from './UsersTile'
+import CachesTile from './CachesTile'
 import { connect } from 'react-redux'
 import MyCarousel from '../components/MyCarousel'
 import { Col } from 'react-bootstrap'
@@ -23,6 +24,9 @@ class Home extends React.Component {
 			  </Col>
   			  <Col sm={6} md={4}>
 			    <UsersTile/>
+			  </Col>
+  			  <Col sm={6} md={4}>
+			    <CachesTile/>
 			  </Col>
 
 			</div>
